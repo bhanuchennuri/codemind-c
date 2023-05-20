@@ -1,14 +1,20 @@
 #include<stdio.h>
+int is_plndrm(int);
 int main()
 {
-    int n,r,rev=0;
+    int n;
     scanf("%d",&n);
-    while(n!=0)
-{
-    r=n%10;
-    rev=rev*10+r;
-    n=n/10;
+    printf("%d",is_plndrm(n));
 }
-printf("%d",rev);
-return 0;
+int is_plndrm(int m)
+{
+    int q,r,s=0;
+    q=m;
+    while(q!=0)
+    {
+        r=q%10;
+        s=(s*10)+r;
+        q=q/10;
+    }
+    return s;
 }
