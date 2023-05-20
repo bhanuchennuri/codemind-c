@@ -1,54 +1,59 @@
 #include<stdio.h>
-int p(int n)
+int large(int a)
 {
-	int s,t,l;
-	t=n;
-	s=0;
-	while(t>0)
-	{
-	    l=t%10;
-	    s=s*10+l;
-	    t=t/10;
-	}
-	if(n==s)
-	{
-	    return 1;
-	}
-	else
-	{
-	    return 0;
-	}
+    int b,i,s,r,lar;
+    for(b=a+1;b>=0;b++)
+    {
+        i=b;
+        s=0;
+        while(i!=0)
+        {
+            r=i%10;
+            s=s*10+r;
+            i=i/10;
+        }
+        if(s==b)
+        {
+            lar=s;
+            // printf("%d",lar);
+            break;
+        }
+    }
+    return lar;
+}
+int small(int a)
+{
+    int i,s,r,sma,b;
+    for(b=a-1;b>0;b--)
+    {
+        i=b;
+        s=0;
+        while(i!=0)
+        {
+            r=i%10;
+            s=s*10+r;
+            i=i/10;
+        }
+        if(s==b)
+        {
+            sma=s;
+            break;
+        }
+    }
+    return sma;
 }
 int main()
 {
-    int n,i,p1,p2;
-    scanf("%d",&n);
-    for(i=n-1;;i--)
-    {
-        if(p(i))
-        {
-            p1=i;
-            break;
-        }
-    }
-    for(i=n+1;;i++)
-    {
-        if(p(i))
-        {
-            p2=i;
-            break;
-        }
-    }
-    if(n-p1==p2-n)
-    {
-        printf("%d %d ",p1,p2);
-    }
-    else if(n-p1>p2-n)
-    {
-        printf("%d",p2);
-    }
+    int a,b,c,d,e,f,min;
+    scanf("%d",&a);
+    b=small(a);
+    c=large(a);
+    e=c-a;
+    f=a-b;
+    if(e==f)
+    printf("%d %d",b,c);
+    else if(e<f)
+    printf("%d",c);
     else
-    {
-        printf("%d",p1);
-    }
+    printf("%d",b);
 }
