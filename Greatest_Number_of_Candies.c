@@ -1,33 +1,32 @@
 #include<stdio.h>
 int main()
 {
-	int n,i,max=0;
-	scanf("%d",&n);
-	int arr[n];
-	for(i=0;i<n;i++)
-	{
-		scanf("%d",&arr[i]);
-	}
-	for(i=0;i<n;i++)
-	{
-		if(arr[i]>max)
-		{
-			max=arr[i];
-		}
-	}
-	//printf("%d",max);
-	int m;
-	scanf("%d",&m);
-	for(i=0;i<n;i++)
-	{
-		if(arr[i]+m>=max)
-	{
-		printf("True ");
-	}
-	else
-	{
-		printf("False ");
-	}
-	}
-	
+    int n,m,i,j,max,f;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&m);
+    max=a[0];
+    for(i=0;i<n;i++)
+    {
+        if(max<a[i])
+        {
+            max=a[i];
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        f=a[i]+m;
+        if(f>=max)
+        {
+            printf("True ");
+        }
+        else
+        {
+            printf("False ");
+        }
+    }
 }
