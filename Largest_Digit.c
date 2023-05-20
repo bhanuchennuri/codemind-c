@@ -1,17 +1,16 @@
 #include<stdio.h>
-main()
+int main()
 {
-    
-    int num,r,Id=0;
-    scanf("%d",&num);
-    
-    while(num > 0)
-{
-    r=num%10;
-    if(Id < r) {
-        Id = r;
+    int n,a=0,r=0;
+    scanf("%d",&n);
+    while(n>0)
+    {
+        r=n%10;
+        if(r>a)
+        {
+            a=r;
+        }
+        n=n/10;
     }
-    num=num/10;
-}
-printf("%d",Id);
+    printf("%d",a);
 }
