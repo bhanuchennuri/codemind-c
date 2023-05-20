@@ -1,14 +1,9 @@
 #include<stdio.h>
 int main()
 {
-    long int n,c=0;
-    scanf("%ld",&n);
-    while(n!=0)
-    {
-        n=n/10;
-        c++;
-    }
-    if(c==10)
+    long long int n;
+    scanf("%lld",&n);
+    if(n>=1000000000 && n<=9999999999)
     {
         printf("Valid");
     }
