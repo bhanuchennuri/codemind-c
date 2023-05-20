@@ -4,11 +4,11 @@ int main()
     int n;
     scanf("%d",&n);
     int a[n],b,c,d,e,f,max=0,i;
-    for(b=0;b<n;b++)
+    for(i=0;i<n;i++)
     {
-        scanf("%d",&a[b]);
+        scanf("%d",&a[i]);
     }
-    max=a[i];
+    max=a[b];
     for(c=0;c<n;c++)
     {
         if(a[c]<max)
